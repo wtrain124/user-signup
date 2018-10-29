@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<form action="/add" method="post">
+  <table>
+    <tbody>
+      <tr>
+        <td> 
+          <label for="usernm">Username</label>
+        </td>
+        <td>
+          <input name="usernm" type= 'text' value= ''>
+          <span class="error">{{user_error}}</span>
+        </td>
+      </tr>
+      <tr>
+          <td> 
+            <label for="password">Password</label>
+          </td>
+          <td>
+            <input name="password" type= 'password' value= ''>
+            <span class="error">{{password_error}}</span>
+          </td>
+      </tr>
+      <tr>
+          <td> 
+            <label for="verify">Verify Password</label>
+          </td>
+          <td>
+            <input name="verify" type= 'password' value= ''>
+            <span class="error">{{verify_error}}</span>
+          </td>
+      </tr>
+      <tr>
+          <td> 
+            <label for="email">Email (optional)</label>
+          </td>
+          <td>
+            <input name="email" type= 'text' value= ''>
+            <span class="error">{{email_error}}</span>
+          </td>
+      </tr>    
+
+    </tbody>
+  </table>
+
+  <input type="submit" value="Submit Query"/>
+
+</form>
+
+
+{% if error %}
+  <p class='error'>{{ error }}</p>
+{% endif %}
+{% endblock %}
